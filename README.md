@@ -27,6 +27,10 @@ A small, user-friendly Windows utility that automates the splitting of a `.blend
 
 The tool is available as a ready-to-use `.exe` file in the [Releases](https://github.com/multipapl/SplitByContext/releases/tag/release) section.
 
+⚠️ Note: Windows Defender or other antivirus software may block or warn about the `.exe` file because it is unsigned and newly created.
+
+To avoid this issue, download the `.zip` archive instead. Extract it and run the `.exe` inside.
+
 No installation required — just download and double-click the executable.
 
 Run the compiled `.exe` (e.g. `BlenderSplit_v1.0.exe`) by double-clicking it. No installation required.
