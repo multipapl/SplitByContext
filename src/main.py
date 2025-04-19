@@ -26,9 +26,31 @@ def save_config(config):
     with open(CONFIG_PATH, 'w') as f:
         json.dump(config, f)
 
-# Generate split-by-context script only
+# Generate the render_split_by_context.py script
 def generate_split_script():
-    script_code = '''import bpy\nimport os\n\nbasename, ext = os.path.splitext(bpy.data.filepath)\nif ext == ".blend":\n    for rset_context_index in range(len(bpy.context.scene.renderset_contexts)):\n        bpy.context.scene.renderset_context_index = rset_context_index\n        context = bpy.context.scene.renderset_contexts[rset_context_index]\n        if not context.include_in_render_all:\n            continue\n        bpy.ops.wm.save_as_mainfile(filepath=f"{basename}_context{rset_context_index}{ext}")\n'''
+    script_code = '''import bpy
+import os
+
+print("Starting context split...")
+
+basename, ext = os.path.splitext(bpy.data.filepath)
+if ext == ".blend":
+    for index in range(len(bpy.context.scene.renderset_contexts)):
+        bpy.context.scene.renderset_context_index = index
+        context = bpy.context.scene.renderset_contexts[index]
+
+        if not context.include_in_render_all:
+            continue
+
+        active_camera = bpy.context.scene.camera
+        name = active_camera.name.strip().replace(" ", "_").replace("/", "_") if active_camera else f"Context{index}"
+
+        outpath = f"{basename}_{name}{ext}"
+        print(f"Saving: {outpath}")
+        bpy.ops.wm.save_as_mainfile(filepath=outpath)
+
+print("Context split completed.")'''
+
     script_path = os.path.join(SCRIPTS_DIR, "render_split_by_context.py")
     with open(script_path, 'w') as f:
         f.write(script_code)
@@ -78,8 +100,6 @@ def start():
         progress.pack_forget()
         run_button.config(state="normal")
         messagebox.showinfo("Completed", "Split completed successfully.")
-        progress.pack_forget()
-        run_button.config(state="normal")
 
     def on_run():
         blender = blender_path_var.get()

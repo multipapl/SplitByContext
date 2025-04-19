@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs
+*.log
+
+# PyInstaller build artifacts
+build/
+dist/
+*.exe
+*.spec
+build_exe.bat
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Editor and OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
