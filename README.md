@@ -1,6 +1,6 @@
 # Blender Renderset Context Splitter (Headless)
 
-A small, user-friendly Windows utility that automates the splitting of a `.blend` file into multiple files — one for each enabled render context — using the [polygoniq renderset](https://docs.polygoniq.com/renderset) add-on in headless mode.
+A small, user-friendly Windows utility that automates the splitting of a `.blend` file into multiple files — one for each enabled render context — using the [polygoniq renderset](https://docs.polygoniq.com/renderset/2.0.1/advanced_topics/headless_rendering/) add-on in headless mode.
 
 ---
 
@@ -49,7 +49,7 @@ project_Context3.blend  ← fallback if no active camera
 
 - Windows OS
 - Blender 4.x or newer
-- [polygoniq renderset](https://docs.polygoniq.com/renderset) add-on installed and configured
+- [polygoniq renderset](https://superhivemarket.com/products/render-manager-addon-renderset) add-on installed and configured
 
 ---
 
