@@ -20,6 +20,3 @@ This minimal tool splits a `.blend` file into multiple versions using active cam
 No installation, Python, or packaging needed.
 
 ---
-
-## Output Example
-
