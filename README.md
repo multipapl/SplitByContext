@@ -1,30 +1,25 @@
-# Blender Renderset Context Splitter (Headless)
+# Blender Renderset Context Splitter (PowerShell Edition)
 
-This tool automatically splits a `.blend` file into multiple versions — one per active context from the `renderset` add-on. Each output file contains a single camera context and is named accordingly.
-
----
-
-## How to Run
-
-### 1. EXE version
-- No Python required
-- Just download the `.exe` or `.zip`, extract, and double-click
-
-### 2. PowerShell version
-- Launched via `run_split_tool.bat`
-- Python is not required, only Blender
-- Logic is handled in `SplitByContext.ps1`
+This minimal tool splits a `.blend` file into multiple versions using active camera contexts from the `renderset` add-on. Each output file contains one context and is named after the assigned camera.
 
 ---
 
-## Everything is included in the Releases
-- EXE file  
-- ZIP archive  
-- PowerShell version with `.bat` launcher
+## How to Use
+
+1. Double-click `run_split_tool.bat`  
+2. Select your Blender executable and a `.blend` file  
+3. The tool runs Blender in background and saves one file per context
 
 ---
 
-## Output
+## Included
 
-Files are saved in the same folder as the original `.blend`:
+- `SplitByContext.ps1` – main logic and GUI
+- `run_split_tool.bat` – silent launcher (no console)
+
+No installation, Python, or packaging needed.
+
+---
+
+## Output Example
 
